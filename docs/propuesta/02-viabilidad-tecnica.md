@@ -107,6 +107,62 @@
 
 
 
+### Backend (Node.js + Express)
+
+-   Autenticación y Autorización: Implementación de JSON Web Tokens (JWT) mediante cookies de tipo HttpOnly para evitar ataques XSS.
+
+-   Control de Roles:
+
+-   Jugador: Usuario base que busca, se une y valora partidos.
+
+-   Organizador: Usuario que crea el evento y administra sus plazas.
+
+-   Administrador: Gestión de reportes, usuarios y catálogo de centros deportivos.
+
+-   Servicios Externos e Integraciones:
+
+-   Resend / Nodemailer (Emails transaccionales): Envío de confirmaciones de reserva y recordatorios.
+
+### Base de Datos (MongoDB + Mongoose)
+
+
+#### Colección: Usuarios
+
+| Campo | Tipo | Requerido | Notas / Restricciones |
+| :--- | :--- | :--- | :--- |
+| `id` | String | Sí | — |
+| `nombre` | String | Sí | — |
+| `email` | String | Sí | Único (`unique`) |
+| `contraseñaHash` | String | Sí | — |
+| `ciudad` | String | Sí | — |
+
+
+#### Colección: Partidos
+
+| Campo | Tipo | Requerido | Notas / Restricciones |
+| :--- | :--- | :--- | :--- |
+| `id_organizador` | ObjectId | Sí | Referencia a `Usuarios` `ìd` |
+| `modo` | String | Sí | Valores permitidos: `'F5'`, `'F7'`, `'F11'` |
+| `nombreLocalizacion` | String | Sí | Referencia a `Pistas` `nombre` |
+| `direccionLocalizacion` | String | Sí | Referencia a `Pistas` `direccion` |
+| `hora` | Date | Sí | — |
+| `precioTotal` | Number | Sí | — |
+| `precioPorJugador` | Number | Sí | — |
+| `maximoJugadores` | Number | Sí | — |
+| `jugadoresConfirmados` | Array | No | Array de jugadores inscritos |
+| `estadoPago` | String | No | Valores: `'pendiente'`, `'pagado'` (Valor por defecto: `'pendiente'`) |
+| `estado` | String | No | Valores: `'abierta'`, `'completa'`, `'cancelada'` (Valor por defecto: `'abierta'`) |
+
+
+#### Colección: Pistas
+
+| Campo | Tipo | Requerido | Notas / Restricciones |
+| :--- | :--- | :--- | :--- |
+| `id` | String | Sí | — |
+| `nombre` | String | Sí | — |
+| `direccion` | String | Sí | Único (`unique`) |
+| `ciudad` | String | Sí | — |
+
 
 # 3.  Evaluación de capacidades del equipo.
 

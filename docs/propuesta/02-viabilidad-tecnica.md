@@ -106,10 +106,59 @@
 -   Base de datos:  MongoDB Atlas. Plan M0 Shared Cluster gratuito permanente
 
 
-
-
 # 3.  Evaluación de capacidades del equipo.
 
+### Inventario de habilidades
 
+-   Cristian: Conocimientos apropiados de bases de datos relaciones y algunos de no relaciones, conocimientos de programación básicos, título de SMR.
+
+-   Indalecio: Conocimientos en cálculo avanzado, programación orientada a objetos y git/github.
+
+-   Jordi:Conocimientos básicos de programación, experiencia en base de datos relacionales, y básicos de github.
+
+-   Daniel: conocimientos de Diseño, manejo de programas suite Adobe. Desarrollo de la identidad visual de la marca.
+
+
+| Nombre | Frontend | Backend | Base de datos | Despliegue |
+| :--- | :--- | :--- | :--- |:--- |
+| `Indalecio` | X |   |   | x |
+| `Daniel` | X | x |   | x |
+| `Cristian` | x | x | X | x |
+| `Jordi` | x | x | X | x |
+
+
+### Lagunas de conocimiento
+
+El grupo necesita adquirir conocimientos de las herramientas principales (MERN), dado que acabamos de empezar el curso y carecemos de estos conocimientos, aunque vamos a investigar por nuestra cuenta.
+
+### Viabilidad del proyecto
+
+Parecía tener buena viabilidad, pero después de la charla con el profesor, hemos identificado una falla a resolver en cuanto al tema de los datos de los polideportivos, necesitaremos encontrar la disponibilidad de las pistas.
 
 # 4.  Identificación de riesgos técnicos.
+
+### Análisis de riesgos
+
+-   Base de datos: privacidad de los jugadores, acceso a métodos de pago
+
+-   Potencial abuso de la plataforma: reservar horarios de forma indiscriminada, no proporcionar información real sobre el nivel de habilidad, etc.
+
+-   Que los usuarios reserven a la misma vez en nuestra página y en la página municipal del ayuntamiento.
+
+-   Si por casualidad de la vida los participantes de un partido acaban entablando amistad un grupo grande, tal vez dejarían de usar la aplicación y se hablarian simplemente entre ellos
+
+-   Que los usuarios que no estén muy familiarizados con la interfaz de la web, puedan llegar a tener dificultades a la hora de interactuar con la aplicación.
+
+### Estrategia de mitigación
+
+-   Proteger los datos personales mediante contraseñas cifradas, autenticación segura y permisos de acceso. Para los pagos, utilizar una pasarela externa y evitar almacenar información bancaria en nuestra base de datos.
+
+-   Establecer límites de reservas por usuario, exigir el pago para confirmar las plazas y permitir valoraciones y reportes para detectar comportamientos inadecuados o niveles de juego falsos.
+
+-   Comprobar si los polideportivos permiten consultar su disponibilidad en tiempo real mediante una API. Si no es posible, contactar con las instalaciones para buscar alternativas y mostrar claramente si una reserva está confirmada o pendiente.
+
+-   Ofrecer funciones útiles para organizar partidos, gestionar pagos y repetir encuentros con amigos, además de facilitar la búsqueda de nuevos jugadores.
+
+-   Diseñar una web intuitiva y adaptable a móviles, con procesos sencillos y mensajes claros. Realizar pruebas con usuarios para detectar y corregir problemas antes del lanzamiento.
+
+Prioridad principal: Resolver la disponibilidad de las pistas deportivas, ya que es el mayor problema para la viabilidad del proyecto. También será fundamental garantizar la seguridad de los datos y evitar las reservas abusivas.
